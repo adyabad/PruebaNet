@@ -199,32 +199,38 @@
 		});
 
 		$('#btnEnviar').on('click', function(){
-			
 			let encuesta = [];	
-			
+			let visibles = 0;
 			$('.form-group').each(function(index, item){
-				if (!$(this).is(':visible')) {
-				  return true;
-				}
-				let respuesta = {};
-				respuesta.pregunta = $(item).find('label').first().text();
+					if (!$(this).is(':visible')) {
+					  return true;
+					}
+					visibles++;
+					let respuesta = {};
+					respuesta.pregunta = $(item).find('label').first().text();
 				
-				if($(item).find('select').first().length != 0){					
-					respuesta.respuesta = $(item).find('select').first().find('option:selected').text();
-				}else if($(item).find('input').first().length != 0 && !$(item).hasClass('ptu-ckb')){					
-					respuesta.respuesta = $(item).find('input').first().val();
-				}else{					
-					let resp = "";
-					$(item).children("input:checked").each(function() {
-						resp += $(this).next('label').text() + " ";
-					});
-					respuesta.respuesta = resp;
-				}
-				encuesta.push(respuesta);
+					if($(item).find('select').first().length != 0){					
+						respuesta.respuesta = $(item).find('select').first().find('option:selected').text();
+					}else if($(item).find('input').first().length != 0 && !$(item).hasClass('ptu-ckb')){					
+						respuesta.respuesta = $(item).find('input').first().val();
+					}else{					
+						let resp = "";
+						$(item).children("input:checked").each(function() {
+							resp += $(this).next('label').text() + " ";
+						});
+						respuesta.respuesta = resp;
+					}
+					
+					if(respuesta.respuesta != "" && respuesta.respuesta != "Seleccione una opción")
+						encuesta.push(respuesta);
 				
-			});
-			GuardarEncuesta(encuesta);
-		});		
+				});
+				
+				if(encuesta.length == visibles)
+					GuardarEncuesta(encuesta);
+				else
+					alert("No es posible guardar la encuesta porque hay preguntas sin responder");
+		});			
 
 		function GuardarEncuesta(encuesta){	
 

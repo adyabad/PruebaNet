@@ -15,12 +15,10 @@ namespace PruebaNet.Tools
                     IXLWorksheet worksheet = workbook.Worksheets.Add("Resultados");
                     worksheet.Cell(1, 1).Value = "Pregunta";
                     worksheet.Cell(1, 2).Value = "Respuesta";
-
                     worksheet.Cell(1, 1).Style.Font.Bold = true;
                     worksheet.Cell(1, 2).Style.Font.Bold = true;
                     worksheet.Cell(1, 1).Style.Fill.BackgroundColor = XLColor.LightBlue;
-                    worksheet.Cell(1, 2).Style.Fill.BackgroundColor = XLColor.LightBlue;
-                    
+                    worksheet.Cell(1, 2).Style.Fill.BackgroundColor = XLColor.LightBlue;                    
 
                     for (int index = 1; index <= respuestas.Count; index++)
 					{
