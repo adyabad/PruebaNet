@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PruebaNet.Models.Encuesta>
+@{
+    ViewData["Title"] = "ListaEncuestas";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Lista de Encuestas</h1>
+
+<table class="table">
+    <thead>
+        <tr>           
+            
+            <th>
+                Id
+            </th>
+            <th>
+                Fecha
+            </th>
+            <th></th>               
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>            
+            <td>
+                @item.EncuestaId
+            </td>
+            <td>
+                @item.Fecha
+            </td>           
+            <td>
+                @Html.ActionLink("Descargar", "DescargarEncuesta", new { encuestaId=item.EncuestaId },new { @class = "btn btn-info" })    
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+

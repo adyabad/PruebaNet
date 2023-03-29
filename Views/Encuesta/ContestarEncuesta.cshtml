@@ -1,0 +1,259 @@
+﻿@{
+	ViewData["Title"] = "Contestar Encuesta";
+	Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Encuesta</h2>
+<br />
+<div class="confirmacion">
+	<h3>Sección 1</h3>
+	<div class="form-group">
+		<label class="control-label">
+			1. Contestaré esta encuesta respecto a la experiencia de la empresa que represento:
+		</label>
+		<select class="form-control slt-confirmacion">
+			<option value="na">Seleccione una opción</option>
+			<option value="si">a. Acepto</option>
+			<option value="no">b. No Acepto</option>
+		</select>
+	</div>
+</div>
+<div id="preguntas" hidden>
+	<br />
+	<div class="form-group">
+		<label class="control-label">
+			2. ¿A qué sector se dedica la empresa?
+		</label>
+		<select class="form-control">
+			<option value="na">Seleccione una opción</option>
+			<option>a. Agricultura, cría y explotación de animales, aprovechamiento forestal, pesca y caza</option>
+			<option>b. Minería</option>
+			<option>
+				c. Generación, transmisión, distribución y comercialización de energía eléctrica, suministro de agua y de gas natural por ductos al consumidor final
+			</option>
+			<option>d. Construcción</option>
+			<option>e. Industrias manufactureras</option>
+			<option>f. Comercio al por mayor</option>
+			<option>g. Comercio al por menor</option>
+			<option>h. Transportes, correos y almacenamiento</option>
+			<option>i. Información en medios masivos</option>
+			<option>j. Servicios financieros y de seguros</option>
+			<option>k. Servicios inmobiliarios y de alquiler de bienes muebles e intangibles</option>
+			<option>l. Servicios profesionales, científicos y técnicos</option>
+			<option>m. Corporativos</option>
+			<option>n. Servicios de apoyo a los negocios y manejo de residuos, y servicios de remediación</option>
+			<option>o. Servicios educativos</option>
+			<option>p. Servicios de salud y de asistencia social</option>
+			<option>q. Servicios de esparcimiento culturales y deportivos, y otros servicios recreativos</option>
+			<option>r. Servicios de alojamiento temporal y de preparación de alimentos y bebidas</option>
+			<option>s. Otros servicios excepto actividades gubernamentales</option>
+		</select>
+	</div>
+	<br />
+	<div class="form-group">
+		<label class="control-label">
+			3. Número de empleados:
+		</label>
+		<select class="form-control input-respuesta">
+			<option>Seleccione una opción</option>
+			<option>a. 1 a 10</option>
+			<option>b. 11 a 50</option>
+			<option>c. 51 a 250</option>
+			<option>d. 251 o más</option>
+		</select>
+	</div>
+	<br />
+	<div class="form-group">
+		<label class="control-label">
+			4. ¿Este año habrá entrega de reparto de utilidades?
+		</label>
+		<select class="form-control input-respuesta slt-utilidades">
+			<option>Seleccione una opción</option>
+			<option value="si">a. Sí</option>
+			<option value="no">b. No</option>
+		</select>
+	</div>
+	<div id="seccion2" hidden>
+		<br />
+		<h3>Sección 2</h3>
+		<div class="form-group">
+			<label class="control-label">
+				5. En comparación con el año anterior ¿Cómo será el monto repartido de PTU?
+			</label>
+			<select class="form-control input-respuesta slt-monto-utilidades">
+				<option value="na">Seleccione una opción</option>
+				<option value="mayor">a. Mayor</option>
+				<option value="igual">b. Igual</option>
+				<option value="menor">c. Menor</option>
+			</select>
+		</div>
+		<br />
+		<div class="form-group ut-mayor ptu ptu-ckb" hidden>
+			<label class="control-label">
+				5.1 ¿Cuáles fueron las razones por las que el monto de reparto de utilidades fue mayor?
+			</label><br />
+			<input class="form-check-input" type="checkbox"> <label>a. Aumento en la productividad de las y los colaboradores</label>
+			<br /><input class="form-check-input" type="checkbox"> <label>b. Aumento de ventas</label>
+			<br /><input class="form-check-input" type="checkbox"> <label>c. Entorno económico favorable</label>
+			<br /><input class="form-check-input" type="checkbox"> <label>d. Nuevas oportunidades de negocio</label>
+
+		</div>
+		<br />
+		<div class="form-group ut-menor ptu ptu-ckb" hidden>
+			<label class="control-label">
+				5.2 ¿Cuáles fueron las razones por las que habrá menor reparto de utilidades?
+			</label><br />
+			<input class="form-check-input" type="checkbox"> <label>a. Disminución en la productividad de las y los colaboradores</label>
+			<br /><input class="form-check-input" type="checkbox"> <label>b. Afectaciones por inseguridad</label>
+			<br /><input class="form-check-input" type="checkbox"> <label>c. Afectaciones por el entorno político y económico</label>
+			<br /><input class="form-check-input" type="checkbox"> <label>d. Continuación de la pandemia COVID-19</label>
+			<br /><input class="form-check-input" type="checkbox"> <label>e. Problemas para mejorar la innovación y los procesos al interior de la empresa</label>
+			<br /><input class="form-check-input" type="checkbox"> <label>f. Complicaciones por la inflación</label>
+
+		</div>
+		<br />
+		<div class="form-group ut-igual ptu" hidden>
+			<label class="control-label">
+				6. Días de salario estimado a pagar por PTU ejercicio 2021
+			</label>
+			<input class="form-control input-respuesta" type="number" placeholder="0" />
+
+		</div>		
+	</div>
+	<div id="seccion3" hidden>
+		<br />
+		<h3>Sección 3</h3>
+	<div class="form-group ptu-ckb">
+		<label class="control-label">
+			7. ¿Cuáles fueron las razones por las que no hubo reparto de utilidades?
+		</label><br />
+		<input class="form-check-input" type="checkbox"> <label>a. Disminución en la productividad de las y los colaboradores</label>
+		<br /><input class="form-check-input" type="checkbox"> <label>b. Afectaciones por inseguridad</label>
+		<br /><input class="form-check-input" type="checkbox"> <label>c. Afectaciones por el entorno político y económico</label>
+		<br /><input class="form-check-input" type="checkbox"> <label>d. Continuación de la pandemia COVID-19</label>
+		<br /><input class="form-check-input" type="checkbox"> <label>e. Problemas para mejorar la innovación y los procesos al interior de la empresa</label>
+		<br /><input class="form-check-input" type="checkbox"> <label>f. Complicaciones por la inflación</label>
+	</div>
+	<br />
+	<div class="form-group">
+		<label class="control-label">
+			8. El año anterior, ¿hubo reparto de PTU?
+		</label>
+		<select class="form-control input-respuesta">
+			<option>a. Sí</option>
+			<option>b. No</option>
+		</select>
+	</div>
+	
+	</div>
+	<br />
+	<button class="btn btn-info" id="btnEnviar">Enviar Respuestas</button>
+</div>
+
+
+
+@section Scripts {
+<script>
+	$(document).ready(function(){
+		$('.slt-confirmacion').on('change', function(){
+		   if($(this).val() == 'si'){
+			   $("#preguntas").attr("hidden",false);
+		   }else if($(this).val() == 'no'){
+				alert("La encuesta ha finalizado");
+				history.back();
+			}else{
+				$("#preguntas").attr("hidden",true);
+			}		
+			
+
+		});
+
+		$('.slt-utilidades').on('change', function(){
+		   if($(this).val() == 'si'){
+			   $("#seccion2").attr("hidden",false);
+			   $("#seccion3").attr("hidden",true);
+		   }else if($(this).val() == 'no'){
+				$("#seccion2").attr("hidden",true);
+				$("#seccion3").attr("hidden",false);
+			}else{
+				$("#seccion2").attr("hidden",true);
+				$("#seccion3").attr("hidden",true);
+			}			
+
+		});
+
+		$('.slt-monto-utilidades').on('change', function(){
+		   if($(this).val() == 'mayor'){
+			   $(".ptu").attr("hidden",true);
+			   $(".ut-mayor").attr("hidden",false);
+		   }else if($(this).val() == 'menor'){
+				$(".ptu").attr("hidden",true);
+			    $(".ut-menor").attr("hidden",false);
+			}else if($(this).val() == 'igual'){
+				$(".ptu").attr("hidden",true);
+			    $(".ut-igual").attr("hidden",false);
+			}else{
+				$(".ptu").attr("hidden",true);
+			}			
+
+		});
+
+		$('#btnEnviar').on('click', function(){
+			
+			let encuesta = [];	
+			
+			$('.form-group').each(function(index, item){
+				if (!$(this).is(':visible')) {
+				  return true;
+				}
+				let respuesta = {};
+				respuesta.pregunta = $(item).find('label').first().text();
+				
+				if($(item).find('select').first().length != 0){					
+					respuesta.respuesta = $(item).find('select').first().find('option:selected').text();
+				}else if($(item).find('input').first().length != 0 && !$(item).hasClass('ptu-ckb')){					
+					respuesta.respuesta = $(item).find('input').first().val();
+				}else{					
+					let resp = "";
+					$(item).children("input:checked").each(function() {
+						resp += $(this).next('label').text() + " ";
+					});
+					respuesta.respuesta = resp;
+				}
+				encuesta.push(respuesta);
+				
+			});
+			GuardarEncuesta(encuesta);
+		});		
+
+		function GuardarEncuesta(encuesta){	
+
+			$.ajax({
+				type: 'POST',
+				data: {respuestas: encuesta},
+				dataType: 'JSON',
+				url: '/Encuesta/GuardarEncuesta',				
+				success:
+					function (response)
+					{
+						if(response != "OK"){
+							alert(response);
+						}else{
+							alert("Las respuestas han sido enviadas exitosamente");
+							window.location.href='@Url.Action("ListaEncuestas","Encuesta")'
+						}						
+					},
+				error:
+					function (response)
+					{
+						alert("Error: " + response);
+					}
+			});
+		}
+	});
+</script>
+}
+
+
+
+
